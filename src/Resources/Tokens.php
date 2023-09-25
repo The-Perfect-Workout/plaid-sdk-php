@@ -90,10 +90,6 @@ class Tokens extends AbstractResource
 			$params["institution_id"] = $institution_id;
 		}
 
-		if ($auth) {
-			$params["auth"] = $auth;
-		}
-
 		return $this->sendRequest(
 			"post",
 			"link/token/create",
