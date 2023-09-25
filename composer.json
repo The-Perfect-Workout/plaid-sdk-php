@@ -1,6 +1,6 @@
 {
-    "name": "tomorrow-ideas/plaid-sdk-php",
-    "description": "PHP implementation of Plaid's API as an SDK.",
+    "name": "the-perfect-workout/plaid-sdk-php",
+    "description": "A fork of TomorrowIdeas/Plaid PHP SDK for Plaid's API.",
     "keywords": [
         "plaid",
         "sdk",
@@ -8,7 +8,7 @@
     ],
     "type": "library",
     "require": {
-        "php": ">=7.3|>=8.0",
+        "php": ">=8.2",
         "ext-json": "*",
         "ext-curl": "*",
         "nimbly/shuttle": "^0.4"
@@ -34,6 +34,10 @@
         {
             "name": "Brent Scheffler",
             "email": "brent@brentscheffler.com"
-        }
+        },
+		{
+			"name": "Jordan Novak",
+			"email": "jordan.novak@theperfectworkout.com"
+		}
     ]
 }
