@@ -1,5 +1,5 @@
 {
-    "name": "the-perfect-workout/plaid-sdk-php",
+    "name": "perfectworkout/plaid-sdk-php",
     "description": "A fork of TomorrowIdeas/Plaid PHP SDK for Plaid's API.",
     "keywords": [
         "plaid",
