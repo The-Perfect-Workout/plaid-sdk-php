@@ -2,6 +2,7 @@
 
 namespace TomorrowIdeas\Plaid\Resources;
 
+use TomorrowIdeas\Plaid\Entities\TokenAuth;
 use TomorrowIdeas\Plaid\Entities\User;
 use TomorrowIdeas\Plaid\PlaidRequestException;
 use TomorrowIdeas\Plaid\Entities\AccountFilters;
@@ -43,7 +44,7 @@ class Tokens extends AbstractResource
 		?string $android_package_name = null,
 		?string $payment_id = null,
 		?string $institution_id = null,
-		?\TomorrowIdeas\Plaid\Entities\Auth $auth = null
+		?TokenAuth $auth = null
 	): object {
 
 		$params = [
