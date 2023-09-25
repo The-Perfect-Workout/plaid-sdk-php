@@ -53,8 +53,6 @@ class User
 	 */
 	protected $date_of_birth;
 
-	protected UserAuth $auth;
-
 	public function __construct(
 		string $id,
 		?string $name = null,
@@ -63,7 +61,6 @@ class User
 		?string $email_address = null,
 		?string $ssn = null,
 		?string $date_of_birth = null,
-		?UserAuth $auth = null,
 	)
 	{
 		$this->id = $id;
@@ -73,7 +70,6 @@ class User
 		$this->email_address = $email_address;
 		$this->ssn = $ssn;
 		$this->date_of_birth = $date_of_birth;
-		$this->auth = $auth;
 	}
 
 	public function toArray(): array
@@ -87,7 +83,6 @@ class User
 				"email_address" => $this->email_address,
 				"ssn" => $this->ssn,
 				"date_of_birth" => $this->date_of_birth,
-				'auth' => $this->auth->toArray(),
 			],
 			function($value): bool {
 				return $value !== null;

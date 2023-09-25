@@ -2,7 +2,7 @@
 
 namespace TomorrowIdeas\Plaid\Entities;
 
-class UserAuth
+class Auth
 {
 	protected bool $auth_type_select_enabled;
 	protected bool $automated_microdeposits_enabled;

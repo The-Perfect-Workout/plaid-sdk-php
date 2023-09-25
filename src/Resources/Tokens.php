@@ -43,7 +43,8 @@ class Tokens extends AbstractResource
 		?string $android_package_name = null,
 		?string $payment_id = null,
 		?string $institution_id = null,
-		?array $auth = null): object {
+		?\TomorrowIdeas\Plaid\Entities\Auth $auth = null
+	): object {
 
 		$params = [
 			"client_name" => $client_name,
@@ -52,6 +53,7 @@ class Tokens extends AbstractResource
 			"user" => $user->toArray(),
 			"products" => $products,
 			'required_if_supported_products' => $requiredIfSupportedProducts,
+			'auth' => !empty($auth) ? $auth->toArray() : null,
 		];
 
 		if( $webhook ){
