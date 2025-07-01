@@ -1,6 +1,7 @@
 <?php
 
 use TomorrowIdeas\Plaid\Entities\AccountFilters;
+use TomorrowIdeas\Plaid\Entities\TokenAuth;
 use TomorrowIdeas\Plaid\Entities\User;
 use TomorrowIdeas\Plaid\Tests\TestCase;
 
@@ -44,6 +45,7 @@ class TokensTest extends TestCase
 			["US"],
 			new User("usr_12345"),
 			[],
+			[],
 			"http://webhook.url"
 		);
 
@@ -57,6 +59,7 @@ class TokensTest extends TestCase
 			"en",
 			["US"],
 			new User("usr_12345"),
+			[],
 			[],
 			null,
 			"link customization name"
@@ -75,6 +78,7 @@ class TokensTest extends TestCase
 			"en",
 			["US"],
 			new User("usr_12345"),
+			[],
 			[],
 			null,
 			null,
@@ -103,6 +107,7 @@ class TokensTest extends TestCase
 			["US"],
 			new User("usr_12345"),
 			[],
+			[],
 			null,
 			null,
 			null,
@@ -119,6 +124,7 @@ class TokensTest extends TestCase
 			"en",
 			["US"],
 			new User("usr_12345"),
+			[],
 			[],
 			null,
 			null,
@@ -141,6 +147,7 @@ class TokensTest extends TestCase
 			["US"],
 			new User("usr_12345"),
 			[],
+			[],
 			null,
 			null,
 			null,
@@ -159,6 +166,7 @@ class TokensTest extends TestCase
 			"en",
 			["US"],
 			new User("usr_12345"),
+			[],
 			[],
 			null,
 			null,
@@ -183,6 +191,7 @@ class TokensTest extends TestCase
 			["US"],
 			new User("usr_12345"),
 			[],
+			[],
 			null,
 			null,
 			null,
@@ -205,6 +214,7 @@ class TokensTest extends TestCase
 			["US"],
 			new User("usr_12345"),
 			[],
+			[],
 			null,
 			null,
 			null,
@@ -213,10 +223,10 @@ class TokensTest extends TestCase
 			null,
 			null,
 			null,
-			[
-				"auth_type_select_enabled" => true,
-				"automated_microdeposits_enabled" => true,
-			]
+			new TokenAuth(
+				auth_type_select_enabled: true,
+				automated_microdeposits_enabled: true,
+			)
 		);
 
 		$this->assertEquals(
@@ -224,6 +234,9 @@ class TokensTest extends TestCase
 				\json_encode([
 					"auth_type_select_enabled" => true,
 					"automated_microdeposits_enabled" => true,
+					"instant_match_enabled" => false,
+					"same_day_microdeposits_enabled" => false,
+					"reroute_to_credentials" => "OPTIONAL",
 				])
 			),
 			$response->params->auth

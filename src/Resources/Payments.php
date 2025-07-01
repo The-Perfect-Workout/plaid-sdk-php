@@ -88,7 +88,7 @@ class Payments extends AbstractResource
 	 * @throws PlaidRequestException
 	 * @return object
 	 */
-	public function create(string $recipient_id, string $reference, float $amount, string $currency, PaymentSchedule $payment_schedule = null): object
+	public function create(string $recipient_id, string $reference, float $amount, string $currency, ?PaymentSchedule $payment_schedule = null): object
 	{
 		$params = [
 			"recipient_id" => $recipient_id,
