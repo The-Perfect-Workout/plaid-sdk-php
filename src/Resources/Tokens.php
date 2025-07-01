@@ -17,6 +17,7 @@ class Tokens extends AbstractResource
 	 * @param array<string> $country_codes Possible values are: CA, FR, IE, NL, ES, GB, US
 	 * @param User $user
 	 * @param array<string> $products Possible values are: transactions, auth, identity, income, assets, investments, liabilities, payment_initiation
+	 * @param array $requiredIfSupportedProducts
 	 * @param string|null $webhook
 	 * @param string|null $link_customization_name
 	 * @param AccountFilters|null $account_filters
@@ -25,9 +26,9 @@ class Tokens extends AbstractResource
 	 * @param string|null $android_package_name
 	 * @param string|null $payment_id
 	 * @param string|null $institution_id
-	 * @param array|null $auth
-	 * @throws PlaidRequestException
+	 * @param TokenAuth|null $auth
 	 * @return object
+	 * @throws PlaidRequestException
 	 */
 	public function create(
 		string $client_name,

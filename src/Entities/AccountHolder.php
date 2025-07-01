@@ -20,7 +20,7 @@ class AccountHolder
 
 	public function __construct(
 		string $legal_name,
-		string $email = null
+		?string $email = null
 	)
 	{
 		$this->legal_name = $legal_name;

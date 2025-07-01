@@ -20,10 +20,10 @@ class BankTransfers extends AbstractResource
 	 * @param string $currency_code
 	 * @param AccountHolder $account_holder
 	 * @param string $description
-	 * @param string $ach_class
-	 * @param string $custom_tag
+	 * @param ?string $ach_class
+	 * @param ?string $custom_tag
 	 * @param array $metadata
-	 * @param string $origination_account_id
+	 * @param ?string $origination_account_id
 	 * @throws PlaidRequestException
 	 * @return object
 	 */
@@ -37,10 +37,10 @@ class BankTransfers extends AbstractResource
 		string $currency_code,
 		AccountHolder $account_holder,
 		string $description,
-		string $ach_class = null,
-		string $custom_tag = null,
+		?string $ach_class = null,
+		?string $custom_tag = null,
 		array $metadata = [],
-		string $origination_account_id = null): object
+		?string $origination_account_id = null): object
 	{
 		$params = [
 			"access_token" => $access_token,
@@ -296,7 +296,7 @@ class BankTransfers extends AbstractResource
 	 * @param string|null $origination_account_id
 	 * @return object
 	 */
-	public function getOriginationAccountBalance(string $origination_account_id = null): object
+	public function getOriginationAccountBalance(?string $origination_account_id = null): object
 	{
 		$params = [];
 
